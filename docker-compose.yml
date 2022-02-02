@@ -1,0 +1,36 @@
+version: "3"
+services:
+  #  Create a service named db.
+  wp-db:
+    #   Use the Docker Image postgres. This will pull the newest release.
+    image: "postgres"
+    #   Give the container the name my_postgres. You can changes to something else.
+    container_name: "e-shop-db"
+    #   Setup the username, password, and database name. You can changes these values.
+    environment:
+      - POSTGRES_USER=wp
+      - POSTGRES_PASSWORD=wp123
+      - POSTGRES_DB=e-shop
+    #   Maps port 5432 (localhost) to port 5432 on the container. You can change the ports to fix your needs.
+    ports:
+      - "5432:5432"
+    #   Set a volume some that database is not lost after shutting down the container.
+    #   I used the name postgres-data but you can changed it to something else.
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+
+  wp-app:
+    build: .
+    image: e-shop-image
+    ports:
+    - "9091:9091"
+    container_name: "e-shop-app"
+    environment:
+      - POSTGRESQL_HOST=e-shop-db
+      - POSTGRES_USER=wp
+      - POSTGRES_PASSWORD=wp123
+      - POSTGRES_DB=e-shop
+    depends_on:
+      - wp-db
+
+
