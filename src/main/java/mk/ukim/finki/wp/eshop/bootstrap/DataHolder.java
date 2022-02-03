@@ -12,7 +12,6 @@ import java.util.List;
 @Getter
 public class DataHolder {
 
-
     public static List<Category> categories = new ArrayList<>();
     public static List<User> users = new ArrayList<>();
     public static List<Product> products = new ArrayList<>();
