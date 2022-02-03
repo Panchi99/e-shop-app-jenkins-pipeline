@@ -19,6 +19,7 @@ public class DataHolder {
     public static List<ShoppingCart> shoppingCarts = new ArrayList<>();
 
 
+
 //    @PostConstruct
 //    public void init() {
 //        categories.add(new Category("Movies", "Movies category"));
