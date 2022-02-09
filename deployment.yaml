@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: e-shop-app-deployment
+  labels:
+    app: e-shop-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: e-shop-app
+  template:
+    metadata:
+      labels:
+        app: e-shop-app
+    spec:
+      containers:
+      - name: e-shop-app-container
+        image: pancikrango/e-shop-app-image:latest
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 9091
