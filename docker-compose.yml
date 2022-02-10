@@ -1,7 +1,6 @@
 version: "3"
 services:
-  #  Create a service named db.
-  wp-db:
+  wp-db:   #  Create a service named db.
     #   Use the Docker Image postgres. This will pull the newest release.
     image: "postgres"
     #   Give the container the name my_postgres. You can changes to something else.
@@ -15,10 +14,8 @@ services:
     ports:
       - "5432:5432"
     #   Set a volume some that database is not lost after shutting down the container.
-    #   I used the name postgres-data but you can changed it to something else.
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
-
   wp-app:
     build: .
     image: e-shop-image
