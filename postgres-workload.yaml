@@ -13,7 +13,7 @@ spec:
         app: postgres
     spec:
       containers:
-        - name: postgres
+        - name: postgres-e-shop-db
           image: postgres:latest
           imagePullPolicy: "IfNotPresent"
           envFrom:
@@ -78,8 +78,8 @@ metadata:
 spec:
   ports:
     - name: postgres
-      port: 5432
-      nodePort: 30000
+      port: 30001
+      nodePort: 30001
   type: NodePort
   selector:
     app: postgres

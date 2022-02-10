@@ -20,3 +20,14 @@ spec:
         imagePullPolicy: Always
         ports:
           - containerPort: 9091
+        env:
+          - name: POSTGRESQL_HOST
+            value: postgres-e-shop-db
+          - name: POSTGRES_DB
+            value: e-shop
+          - name: POSTGRES_USER
+            value: wp
+          - name: POSTGRES_PASSWORD
+            value: wp123
+          - name: PGPORT
+            value: "5432"
