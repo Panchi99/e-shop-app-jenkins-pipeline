@@ -10,4 +10,4 @@ The pipeline consists of 5 steps:
  3. Docker Image Push  -> for pushing the last created Docker Image to the Docker Hub.
  4. Deploy to Kubernetes Cluster -> for pulling the Docker image from Docker Hub and deploying to the specified Kubernetes Cluster Provider.
  
-The pipeline is triggered on every push to this repository (e-shop-app-jenkins-pipeline) using GitHub WebHooks.
+The pipeline is triggered on every push to this repository (e-shop-app-jenkins-pipeline) using GitHub WebHooks. 
